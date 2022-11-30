@@ -1,0 +1,223 @@
+body {
+    background-color: black;
+    color: #cfcdcd;
+}
+
+.App {
+    font-family: "Hiragino Kaku Gothic Pro",Osaka,
+        Meiryo, "MS PGothic", sans-serif;
+    padding: 0 1ch;
+    margin: 10px auto;
+    max-width: 112ch;
+    display: grid;
+}
+
+.banner {
+    background-image: url('./brs-banner.jpeg');
+    color: white;
+    background-size: cover;
+    background-position: center;
+    border: 1px solid #808080;
+    padding: 2ch 1ch;
+    margin: 10px 0;
+}
+
+.long-address {
+    max-width: 15ch;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.banner h1, h2, h3, h4 {
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    color: #037ce1;
+    font-weight: lighter;
+}
+
+h1 > a { text-decoration: none }
+
+main {
+    max-width: 100%;
+    display: grid;
+    grid-template-areas:
+        'chart' 'trading';
+    grid-template-columns: 1fr 30ch;
+    text-align: justify;
+    hyphens: auto;
+}
+
+main .trading-form {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.3rem;
+    gap: 0.5ch;
+}
+
+.execute-trade {
+    width: 100%;
+    background-color: blue;
+    color: white;
+    border: 1px solid #105289;
+    padding: 10px;
+}
+.long { color: green }
+.direction-up { animation: flashGreen 1s; }
+.direction-down { animation: flashRed 1s; }
+@keyframes flashGreen {
+    0% { background-color: green; color: white }
+    100% { background-color: initial; color: initial }
+}
+@keyframes flashRed {
+    0% { background-color: red; color: white }
+    100% { background-color: initial; color: initial }
+}
+.short, .fee, .liquidation { color: red }
+.long-bg {
+    background-color: green;
+    color: white;
+}
+.short-bg {
+    background-color: red;
+    color: white;
+}
+
+datalist {
+    display: flex;
+    color: red;
+    width: 100%;
+}
+
+.trading h2 {
+    margin-top: 0;
+}
+
+.hoverAnimBox :nth-child(1), .hoverAnimBox :nth-child(2) {
+  position: absolute;
+}
+
+.hoverAnimBox:hover :first-child {
+  display: none;
+}
+
+.hoverAnimBox :nth-child(2) {
+  display: none;
+}
+
+.board figcaption h3 {
+  font-size: 2rem;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.boardList {
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  list-style: none;
+}
+
+.hoverAnimBox :nth-child(1) { z-index: 3 }
+.hoverAnimBox :nth-child(2) { z-index: 2 }
+.hoverAnimBox :nth-child(3) { z-index: 1 }
+
+.hoverAnimBox:hover :nth-child(2) {
+  display: block;
+}
+
+.board .hoverAnimBox > * { border: 1px solid; }
+
+.open-positions table { width: 100% }
+.trading-info th,
+.open-positions th { text-align: left }
+.trading-info td,
+.open-positions td { text-align: right }
+.open-position .pos-header { text-align: center }
+.trading-info table { width: 100% }
+.open-positions { width: 100% }
+.trading {
+    margin: 0 0 0 1ch;
+}
+
+.trading-form > label {
+    margin: 1px 0;
+}
+
+.banner img {
+}
+
+header nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: end;
+    justify-content: space-between;
+}
+
+.flat-nav { display: flex; flex-wrap: wrap; border-width: 0 1px; color: black }
+.flat-nav a { border: 1px solid rgba(0,0,0,0.3);
+    margin: 2px 0;
+    padding: 0 8px;
+    background-color: white;
+    text-decoration: none; }
+a,
+a:visited {
+    outline: none;
+    color: inherit;
+}
+
+header nav a {
+    padding: 0 5px;
+    margin: 
+}
+
+.banner h1 {
+    margin: 0;
+}
+
+.hoverbox {
+    cursor: pointer;
+}
+
+.max-bid { cursor: pointer }
+
+.subtext {
+    color: gray;
+    font-size: 0.9rem;
+    text-align: right;
+    display: block;
+}
+
+header nav > * {
+}
+
+.about-href {
+}
+
+hr {
+    border: 1px solid #808080;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.hoverbox { transition: box-shadow 0.5s, color 1s; }
+.hoverbox:hover { box-shadow: -3px 3px 10px; }
+a.hoverbox { text-decoration: none }
+a.hoverbox, .flat-nav a { color: inherit } 
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+input[type=submit] { cursor: pointer }
