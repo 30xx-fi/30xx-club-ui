@@ -19,7 +19,7 @@ function Home() {
   governance.</p>
   <ul className="boardList">
   <li><figure className="board">
-  <a href="" className="hoverAnimBox">
+  <a href="/boards/crypto" className="hoverAnimBox">
     <img height="200" src="/crypto-icon-static.gif" />
     <img height="200" src="/crypto-icon.gif" />
     <img height="200" src="/crypto-icon-static.gif" />
@@ -27,7 +27,7 @@ function Home() {
   <figcaption><h3>「Crypto」</h3></figcaption>
   </figure></li>
   <li><figure className="board">
-  <a href="" className="hoverAnimBox">
+  <a href="/boards/random" className="hoverAnimBox">
     <img height="200" src="/random-icon-static.gif" />
     <img height="200" src="/random-icon.gif" />
     <img height="200" src="/random-icon-static.gif" />
@@ -35,7 +35,7 @@ function Home() {
   <figcaption><h3>「Random」</h3></figcaption>
   </figure></li>
   <li><figure className="board">
-  <a href="" className="hoverAnimBox">
+  <a href="/boards/wired" className="hoverAnimBox">
     <img height="200" src="/wired-icon-static.gif" />
     <img height="200" src="/wired-icon.gif" />
     <img height="200" src="/wired-icon-static.gif" />

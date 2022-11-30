@@ -13,9 +13,11 @@ import { EmbedChainInfos } from "./config";
 import {
   BrowserRouter as Router,
   Route,
-  Routes
+  Routes,
+  useParams,
 } from "react-router-dom";
 import Home from './Home';
+import Board from './Board';
 
 const walletInfoList: WalletInfo[] = [
   {
@@ -41,44 +43,60 @@ const walletInfoList: WalletInfo[] = [
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Main />} />
-        <Route path="/about" element={<AboutRoute />} />
-      </Routes>
-    </Router>
-  )
-}
-
-function Main() {
-  return (
     <WalletManagerProvider walletInfoList={walletInfoList}>
       <div className="App">
-        <header className="App-header">
-          <Banner />
-          <Nav />
-          <hr/>
-        </header>
-        <main>
-          <Home />
-        </main>
+          <header className="App-header">
+            <Banner />
+            <Nav />
+            <hr/>
+          </header>
+        <Router>
+          <Routes>
+            <Route path="/" element={<HomeRoute />} />
+            <Route path="/about" element={<AboutRoute />} />
+            <Route path="/boards" element={<AllBoards />}/>
+            <Route path="/boards/:name" element={<BoardRoute />} />
+          </Routes>
+        </Router>
       </div>
     </WalletManagerProvider>
   )
 }
 
+function HomeRoute() {
+  return (
+    <main>
+      <Home />
+    </main>
+  )
+}
+
+function BoardRoute() {
+  const { name } = useParams()
+
+  /* What are you trying to do? */
+  if ( name === undefined) return <AllBoards />
+
+  return (
+    <main>
+      <Board
+        name = {name}
+      />
+    </main>
+  )
+}
+
+function AllBoards() {
+  return (
+    <p>Hmm, nothing is here yet...</p>
+  )
+}
+
 function AboutRoute() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <Banner />
-        <Nav />
-        <hr/>
-      </header>
-      <main>
-        <About />
-      </main>
-    </div>
+    <main>
+      <About />
+    </main>
   )
 }
 
